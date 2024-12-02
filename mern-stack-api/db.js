@@ -1,8 +1,8 @@
  
 const mongoose = require('mongoose');
-const url ="mongodb+srv://mern-stack-1:YHwn2qlqfQIHHB3P@post.tiifp.mongodb.net/mern-app?retryWrites=true&w=majority&appName=post"
+const uri = "mongodb+srv://mern-stack-1:YHwn2qlqfQIHHB3@post.tiifp.mongodb.net/mern-app?retryWrites=true&w=majority&appName=post";
 //mongodb://127.0.0.1:27017/postManagerDB
-mongoose.connect(url, {
+mongoose.connect(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 }, (err) => {
