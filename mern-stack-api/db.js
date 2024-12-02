@@ -1,7 +1,11 @@
  
 const mongoose = require('mongoose');
-const url ="mongodb+srv://mern-stack-1:YHwn2qlqfQIHHB3P@post.tiifp.mongodb.net/mern-app?retryWrites=true&w=majority&appName=post"
-//mongodb://127.0.0.1:27017/postManagerDB
+
+
+const dotenv = require('dotenv');
+ // Load environment variables from .env file dotenv.config(); 
+ // Use the environment variable for the MongoDB connection string 
+const url = process.env.MONGO_URI; 
 mongoose.connect(url, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
