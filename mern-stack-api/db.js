@@ -2,14 +2,19 @@
 const mongoose = require('mongoose');
 
 
-const dotenv = require('dotenv');
- // Load environment variables from .env file dotenv.config(); 
- // Use the environment variable for the MongoDB connection string 
+require('dotenv').config();
+console.log('MongoDB URI:', process.env.MONGO_URI); // Check if the URI is being read correctly
+
 const url = process.env.MONGO_URI; 
-mongoose.connect(url, {
+await mongoose.connect(url, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-}, (err) => {
+  authSource: 'admin',
+  replicaSet: 'atlas-3x2o5m-shard-0',
+  ssl: true,
+  appName: 'Cluster0'
+}
+, (err) => {
   if (!err) {
     console.log('Mongodb connection succeeded.');
   } else {
