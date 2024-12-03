@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = 'http://localhost:4001/'
+const baseUrl = 'https://mern-app-7-khcp.onrender.com'
 
 export default {
     postMessage(url = baseUrl + 'postmessages/') {
